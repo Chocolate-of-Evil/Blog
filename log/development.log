@@ -1234,3 +1234,203 @@ ActionView::Template::Error (Missing host to link to! Please provide the :host p
     8: <p>Your password won't change until you access the link above and create a new one.</p>
   
 app/views/devise/mailer/reset_password_instructions.html.erb:5
+Started GET "/users/sign_in" for ::1 at 2022-07-06 13:04:54 +0300
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 2.9ms | Allocations: 609)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 26.9ms | Allocations: 5560)
+Completed 200 OK in 125ms (Views: 60.1ms | ActiveRecord: 1.3ms | Allocations: 18385)
+
+
+Started GET "/users/password/new" for ::1 at 2022-07-06 13:04:56 +0300
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 195)
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 185)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 7.6ms | Allocations: 1460)
+Completed 200 OK in 17ms (Views: 14.6ms | ActiveRecord: 0.0ms | Allocations: 4303)
+
+
+Started POST "/users/password" for ::1 at 2022-07-06 13:05:00 +0300
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"EaZjEgqDpN68OZZ6gbKW5lRIujXEyEq7ZuYoDcKCFIxBG/C5XCmA0ag0UVsLJDxzW0lZ1quUbgdBzxeZ6g7IQA==", "user"=>{"email"=>"Lena-0702@bk.ru"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lena-0702@bk.ru"], ["LIMIT", 1]]
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."reset_password_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["reset_password_token", "67f9d54c237127612496b7e665d99ffd828870c16091eb65ea891e0d5eab985c"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = ?, "reset_password_sent_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_password_token", "67f9d54c237127612496b7e665d99ffd828870c16091eb65ea891e0d5eab985c"], ["reset_password_sent_at", "2022-07-06 10:05:00.285926"], ["updated_at", "2022-07-06 10:05:00.286804"], ["id", 3]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 3.1ms | Allocations: 1547)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 8.7ms
+Completed 500 Internal Server Error in 283ms (ActiveRecord: 6.7ms | Allocations: 22364)
+
+
+  
+ActionView::Template::Error (Missing host to link to! Please provide the :host parameter, set default_url_options[:host], or set :only_path to true):
+    2: 
+    3: <p>Someone has requested a link to change your password. You can do this through the link below.</p>
+    4: 
+    5: <p><%= link_to 'Change my password', edit_password_url(@resource, reset_password_token: @token) %></p>
+    6: 
+    7: <p>If you didn't request this, please ignore this email.</p>
+    8: <p>Your password won't change until you access the link above and create a new one.</p>
+  
+app/views/devise/mailer/reset_password_instructions.html.erb:5
+Started GET "/users/password/new" for ::1 at 2022-07-06 13:08:33 +0300
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::PasswordsController#new as HTML
+  Rendering devise/passwords/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.9ms | Allocations: 196)
+  Rendered devise/shared/_links.html.erb (Duration: 2.6ms | Allocations: 607)
+  Rendered devise/passwords/new.html.erb within layouts/application (Duration: 22.8ms | Allocations: 4672)
+Completed 200 OK in 120ms (Views: 66.3ms | ActiveRecord: 1.7ms | Allocations: 16948)
+
+
+Started POST "/users/password" for ::1 at 2022-07-06 13:08:39 +0300
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"authenticity_token"=>"Cwy4bWPDdrLA9eOy6xZHlP8ZaJPc85xtHX/yXHB4g0pbsSvGNWlSvdT4JJNhgO0B8BiLcLOvuNE6Vs3IWPRfhg==", "user"=>{"email"=>"Lena-0702@bk.ru"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lena-0702@bk.ru"], ["LIMIT", 1]]
+  [1m[36mUser Load (2.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."reset_password_token" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["reset_password_token", "16ee968ae593295d9516831d1a548ce04e9fc23412800529094f4c401322ae60"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "reset_password_token" = ?, "reset_password_sent_at" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["reset_password_token", "16ee968ae593295d9516831d1a548ce04e9fc23412800529094f4c401322ae60"], ["reset_password_sent_at", "2022-07-06 10:08:39.483895"], ["updated_at", "2022-07-06 10:08:39.484815"], ["id", 3]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  Rendering devise/mailer/reset_password_instructions.html.erb
+  Rendered devise/mailer/reset_password_instructions.html.erb (Duration: 1.5ms | Allocations: 242)
+Devise::Mailer#reset_password_instructions: processed outbound mail in 12.4ms
+Delivered mail 62c55f2789ef6_6a45820139b4@mac-mini-110s-Mac-mini.local.mail (22.6ms)
+Date: Wed, 06 Jul 2022 13:08:39 +0300
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: lena-0702@bk.ru
+Message-ID: <62c55f2789ef6_6a45820139b4@mac-mini-110s-Mac-mini.local.mail>
+Subject: Reset password instructions
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello lena-0702@bk.ru!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=HCRZJ6u4QDbA6tpRAxpv">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 318ms (ActiveRecord: 6.8ms | Allocations: 25524)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-06 13:08:39 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.9ms | Allocations: 187)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 15.3ms | Allocations: 3069)
+Completed 200 OK in 30ms (Views: 25.9ms | ActiveRecord: 0.0ms | Allocations: 6652)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-06 13:18:11 +0300
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 5.1ms | Allocations: 539)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 13.1ms | Allocations: 2196)
+Completed 200 OK in 62ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 10067)
+
+
+Started GET "/" for ::1 at 2022-07-06 13:18:16 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 78)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 2855)
+
+
+Started GET "/users/sign_in" for ::1 at 2022-07-06 13:18:20 +0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 149)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.8ms | Allocations: 1332)
+Completed 200 OK in 13ms (Views: 11.1ms | ActiveRecord: 0.0ms | Allocations: 3574)
+
+
+Started POST "/users/sign_in" for ::1 at 2022-07-06 13:18:34 +0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"2extt3QCtRRQUYG3CmfMSQxqqTjsYVeTvwsrIeVeWr1tVy4jfbU8Jh41vEJ90k3qjuRLgvXz7H9gAzXo19WWJw==", "user"=>{"email"=>"Lena-0702@bk.ru", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "lena-0702@bk.ru"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 388ms (ActiveRecord: 0.9ms | Allocations: 4523)
+
+
+Started GET "/" for ::1 at 2022-07-06 13:18:34 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 5)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.3ms | Allocations: 2964)
+
+
+Started GET "/users/edit" for ::1 at 2022-07-06 13:18:37 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.4ms | Allocations: 194)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 8.6ms | Allocations: 2651)
+Completed 200 OK in 21ms (Views: 15.8ms | ActiveRecord: 0.2ms | Allocations: 6938)
+
+
+Started GET "/users/password/edit?reset_password_token=[FILTERED]" for ::1 at 2022-07-06 13:19:40 +0300
+Processing by Devise::PasswordsController#edit as HTML
+  Parameters: {"reset_password_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.3ms | Allocations: 1903)
+
+
+Started GET "/" for ::1 at 2022-07-06 13:19:40 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:17
+Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.2ms | Allocations: 2929)
+
+
+Started GET "/users/edit" for ::1 at 2022-07-06 13:19:47 +0300
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 5.5ms | Allocations: 1779)
+Completed 200 OK in 19ms (Views: 11.8ms | ActiveRecord: 0.2ms | Allocations: 5291)
+
+
+Started GET "/users/sign_out" for ::1 at 2022-07-06 13:20:07 +0300
+Processing by Devise::SessionsController#destroy as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 0.2ms | Allocations: 2495)
+
+
+Started GET "/" for ::1 at 2022-07-06 13:20:07 +0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 2075)
+
+
+Started GET "/users/password/edit?reset_password_token=[FILTERED]" for ::1 at 2022-07-06 13:20:14 +0300
+Processing by Devise::PasswordsController#edit as HTML
+  Parameters: {"reset_password_token"=>"[FILTERED]"}
+  Rendering devise/passwords/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 156)
+  Rendered devise/passwords/edit.html.erb within layouts/application (Duration: 68.7ms | Allocations: 4464)
+Completed 200 OK in 84ms (Views: 81.3ms | ActiveRecord: 0.0ms | Allocations: 7298)
+
+
