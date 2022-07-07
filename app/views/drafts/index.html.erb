@@ -1,0 +1,13 @@
+<h1>Drafts#index</h1>
+<ul>
+  <% @articles.each do |article| %>
+    <% unless !article.draft? %>
+      <li>
+      	<a href="<%= article_path(article) %>/edit">
+        <%= article.title %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+<li><a href="/articles/">To articles</a></li> 
+
