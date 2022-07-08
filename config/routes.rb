@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   root to: "home#index"
   resources :articles
   resources :drafts
-  get "/articles/:id", to: "articles#show"
   #get 'persons/profile', as: 'user_root'
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
