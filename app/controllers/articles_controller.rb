@@ -1,7 +1,9 @@
 class ArticlesController < ApplicationController
+
   before_action :authenticate_user!
   def index
-    @articles = Article.all
+    #@articles = Article.all
+    @articles = Article.where(status: :public).order(:created_at).page(params[:page]).per(5)
   end
     def show
     @article = Article.find(params[:id])
