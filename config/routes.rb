@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   get "/articles", to: "articles#index"
+  get 'home/about_me', to: 'home#about_me'
+  get 'home/contact_me', to: 'home#contact_me'
   #get 'home/index'
   devise_for :users
   #get 'persons/profile'

@@ -35,6 +35,9 @@ class ArticlesController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
+  def all
+    @articles = Article.where(status: :public).order(:created_at).page(params[:page]).per(5)
+  end
   private
     def article_params
       params.require(:article).permit(:title, :body, :status, :user_id)
