@@ -2,10 +2,10 @@
 <h1><%= @article.title %></h1>
 <p><%= @article.body %></p>
 <% if current_user.id == @article.user_id %>
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  <ul>
+    <li><%= link_to "Edit", edit_article_path(@article) %></li>
+  </ul>
 <% end %>
-
 <% else %>
 <% if current_user.id == @article.user_id %>
 <h1><%= @article.title %></h1>
@@ -15,7 +15,5 @@
 Извините, у вас нет доступа к данному контенту!
 <% end %>
 <% end %>
-<li><a href="/articles/">To articles</a></li> 
-
-</ul>
+<a href="/articles/">To your articles</a>
 
