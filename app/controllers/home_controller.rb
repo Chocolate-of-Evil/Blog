@@ -6,6 +6,4 @@ class HomeController < ApplicationController
   def about_me
   end
 
-  def contact_me
-  end
 end

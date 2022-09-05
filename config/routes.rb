@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get "/articles", to: "articles#index"
   get 'home/about_me', to: 'home#about_me'
-  get 'home/contact_me', to: 'home#contact_me'
+
+ get '/contacts', to: 'contacts#new'
+  resources :contacts, only: [:create]
   devise_for :users
   root to: "home#index"
   resources :articles
