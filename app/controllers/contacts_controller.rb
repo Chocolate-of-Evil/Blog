@@ -1,5 +1,6 @@
 class ContactsController < ApplicationController
-	  p ENV['GMAIL_PASSWORD']
+	def new
+	end
 
 	def create
     	OrderMailer.contacts_mail(contacts_params).deliver_now
