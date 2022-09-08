@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.5'
 gem 'sqlite3', '~> 1.4'
 gem 'pg', '~> 1.1'
 gem 'kaminari'
+gem 'rubocop', require: false
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
@@ -48,6 +49,7 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
+  gem 'capybara-screenshot'
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
