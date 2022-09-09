@@ -1,26 +1,23 @@
 require 'rails_helper'
 
 describe User, type: :model do
-subject(:model) { described_class.new(user_params) }
-
-  context 'with valid atributes' do
-    let(:user_params) { { email: "test@mail.ru", password: "123456"} }
-    it 'is valid' do
-      expect(model).to be_valid
-    end
+  let(:user) { build(:user) }
+#subject(:model) { described_class.new(user_params) }
+  it 'is valid with valid atributes' do
+    expect(user).to be_valid
   end
 
   context 'without email' do
-    let(:user_params) { { email: "", password: "123456"} }
+    let(:user) { build(:user, email: nil) }
     it 'is not valid' do
-      expect(model).not_to be_valid
+      expect(user).not_to be_valid
     end
   end
 
   context 'without password' do
-    let(:user_params) { { email: "test@mail.ru", password: ""} }
+    let(:user) { build(:user, password: nil) }
     it 'is not valid' do
-      expect(model).not_to be_valid
+      expect(user).not_to be_valid
     end
   end
 end
