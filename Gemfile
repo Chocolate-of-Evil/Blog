@@ -10,6 +10,7 @@ gem 'sqlite3', '~> 1.4'
 gem 'pg', '~> 1.1'
 gem 'kaminari'
 gem 'rubocop', require: false
+gem 'faker'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets
