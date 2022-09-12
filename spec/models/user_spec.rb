@@ -2,7 +2,6 @@ require 'rails_helper'
 
 describe User, type: :model do
   let(:user) { build(:user) }
-#subject(:model) { described_class.new(user_params) }
   it 'is valid with valid atributes' do
     expect(user).to be_valid
   end

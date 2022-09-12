@@ -4,7 +4,6 @@ RSpec.describe "Create article" do
   let(:user) { create(:user) }
   context 'create article' do
     it "is valid" do
-
       sign_in user
       visit "/articles/new"
       fill_in 'Title', with: 'test'
@@ -12,8 +11,7 @@ RSpec.describe "Create article" do
       click_button 'Create Article'
       expect(page).to have_content 'To your articles'
     end
-    it "not valid" do
-
+    it "is not valid" do
       sign_in user
       visit "/articles/new"
       fill_in 'Title', with: ''
@@ -21,8 +19,7 @@ RSpec.describe "Create article" do
       click_button 'Create Article'
       expect(page).to have_content "Title can't be blank"
     end
-    it "not valid" do
-
+    it "is not valid" do
       sign_in user
       visit "/articles/new"
       fill_in 'Title', with: 'test'
@@ -30,8 +27,7 @@ RSpec.describe "Create article" do
       click_button 'Create Article'
       expect(page).to have_content "Body can't be blank"
     end
-    it "not valid" do
-
+    it "is not valid" do
       sign_in user
       visit "/articles/new"
       fill_in 'Title', with: 'test'
