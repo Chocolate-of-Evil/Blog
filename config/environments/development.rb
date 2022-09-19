@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
@@ -20,7 +22,7 @@ Rails.application.configure do
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
 
-    config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+    config.action_mailer.default_url_options = { host: 'localhost:3000' }
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
@@ -66,14 +68,14 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-  address: 'smtp.gmail.com',
-  port: 587,
-  domain: 'example.com',
-  authentication: 'plain',
-  enable_starttls_auto: true,
-  user_name: ENV['GMAIL_USER'], 
-  password:  ENV['GMAIL_PASSWORD'],
-  open_timeout:         5,
-  read_timeout:         5
-}
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: 'example.com',
+    authentication: 'plain',
+    enable_starttls_auto: true,
+    user_name: ENV['GMAIL_USER'],
+    password: ENV['GMAIL_PASSWORD'],
+    open_timeout: 5,
+    read_timeout: 5
+  }
 end
