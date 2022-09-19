@@ -1,8 +1,11 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
-RSpec.describe "#user" do
-  feature ".log_in_process" do
+RSpec.describe '#user' do
+  feature '.log_in_process' do
     let(:user) { create(:user) }
+
     context 'with email and password' do
       scenario 'is valid' do
         visit new_user_session_path
@@ -14,7 +17,8 @@ RSpec.describe "#user" do
         expect(page).to have_content 'Signed in successfully.'
       end
     end
-    context 'no email' do
+
+    context 'without email' do
       scenario 'is not valid' do
         visit new_user_session_path
 
@@ -25,7 +29,8 @@ RSpec.describe "#user" do
         expect(page).to have_content 'Invalid Email or password.'
       end
     end
-    context 'no password' do
+
+    context 'without password' do
       scenario 'is not valid' do
         visit new_user_session_path
 

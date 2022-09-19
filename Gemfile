@@ -8,10 +8,9 @@ ruby '2.7.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.0.5'
 # Use sqlite3 as the database for Active Record
+gem 'faker'
 gem 'kaminari'
 gem 'pg', '~> 1.1'
-gem 'rubocop', require: false
-gem 'faker'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -36,10 +35,14 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'rspec-support', '~> 3.11.0'
-  gem 'factory_bot_rails'
+  gem 'rubocop', require: false
+  gem 'rubocop-discourse', require: false
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
