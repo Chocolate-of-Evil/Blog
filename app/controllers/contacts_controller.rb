@@ -1,15 +1,16 @@
+# frozen_string_literal: true
+
 class ContactsController < ApplicationController
-	def new
-	end
+  def new; end
 
-	def create
-    	OrderMailer.contacts_mail(contacts_params).deliver_now
-    	redirect_to root_path, notice: 'Message sent'
-  	end
+  def create
+    OrderMailer.contacts_mail(contacts_params).deliver_now
+    redirect_to root_path, notice: 'Message sent'
+  end
 
-	private
+  private
 
-	def contacts_params
-    	params.permit( :email, :message, :authenticity_token, :commit)
-  	end
+  def contacts_params
+    params.permit(:email, :message, :authenticity_token, :commit)
+  end
 end
