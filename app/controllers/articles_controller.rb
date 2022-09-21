@@ -1,12 +1,15 @@
-class ArticlesController < ApplicationController
+# frozen_string_literal: true
 
+class ArticlesController < ApplicationController
   before_action :authenticate_user!
   def index
     @articles = Article.where(status: :public).order(:created_at).page(params[:page]).per(5)
   end
-    def show
+
+  def show
     @article = Article.find(params[:id])
   end
+
   def new
     @article = Article.new
   end
@@ -34,11 +37,14 @@ class ArticlesController < ApplicationController
       render :edit, status: :unprocessable_entity
     end
   end
+
   def all
     @articles = Article.where(status: :public).order(:created_at).page(params[:page]).per(5)
   end
+
   private
-    def article_params
-      params.require(:article).permit(:title, :body, :status, :user_id)
-    end
+
+  def article_params
+    params.require(:article).permit(:title, :body, :status, :user_id)
+  end
 end
