@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+set -e
+
+echo "Run quality checks"
+
+bin/rubocop -A
+bin/slim-lint app/views
+bin/scss-lint app/assets/stylesheets/
+bin/erblint --lint-all
+bin/brakeman
+bin/bundle-audit update
+bin/bundle-audit

@@ -38,6 +38,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'rspec-support', '~> 3.11.0'
+  gem 'bundle-audit'
 end
 
 group :development do
