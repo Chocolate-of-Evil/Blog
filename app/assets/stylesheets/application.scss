@@ -9,7 +9,9 @@
 
 .sidebar {
   background-color: var(--white-blue);
+  background-image: url('dark_blue.jpeg');
   color: var(--blue-steel);
+  font-family: Snell Roundhand, cursive;
   font-size: 20;
   height: 100%;
   left: 0;
@@ -22,6 +24,7 @@
 }
 
 .main {
+  font-family: Bradley Hand;
   margin-left: 180px;
 }
 
@@ -37,10 +40,12 @@
 
 .logo {
   float: left;
+  padding-top: 6px;
 }
 
 header {
   background: var(--sky-blue);
+  background-image: url('cosmos2.jpeg');
 }
 
 header::after {
@@ -62,17 +67,18 @@ nav {
     color: var(--violet);
     display: inline-block;
     margin-left: 50px;
-    padding-top: 15px;
+    padding-top: 20px;
   }
 
   a {
-    color: var(--midnight-black);
-    font-size: 14px;
+    color: var(--blue-steel);
+    font-family: Marker Felt, fantasy;
+    font-size: 20px;
     text-decoration: none;
     text-transform: uppercase;
 
     &:hover {
-      color: var(--black);
+      color: var(--white-blue);
     }
   }
 }
@@ -86,9 +92,13 @@ side {
   }
 
   a {
-    color: var(--midnight-black);
+    color: var(--sky-blue);
     font-size: 14px;
     text-decoration: none;
     text-transform: uppercase;
   }
+}
+
+body {
+  background-image: url('white_blue.jpeg');
 }
