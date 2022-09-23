@@ -60,9 +60,17 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     bcrypt (3.1.18)
+    better_html (2.0.1)
+      actionview (>= 6.0)
+      activesupport (>= 6.0)
+      ast (~> 2.0)
+      erubi (~> 1.4)
+      parser (>= 2.4)
+      smart_properties
     bindex (0.8.1)
     bootsnap (1.13.0)
       msgpack (~> 1.2)
+    brakeman (5.3.1)
     builder (3.2.4)
     bundle-audit (0.1.0)
       bundler-audit
@@ -92,6 +100,13 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.5.0)
+    erb_lint (0.2.0)
+      activesupport
+      better_html (>= 2.0.1)
+      parser (>= 2.7.1.4)
+      rainbow
+      rubocop
+      smart_properties
     erubi (1.11.0)
     factory_bot (6.2.1)
       activesupport (>= 5.0.0)
@@ -224,8 +239,22 @@ GEM
       unicode-display_width (>= 1.4.0, < 3.0)
     rubocop-ast (1.21.0)
       parser (>= 3.1.1.0)
+    rubocop-discourse (2.5.0)
+      rubocop (>= 1.1.0)
+      rubocop-rspec (>= 2.0.0)
+    rubocop-rails (2.16.1)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 1.33.0, < 2.0)
+    rubocop-rspec (2.13.1)
+      rubocop (~> 1.33)
     ruby-progressbar (1.11.0)
     rubyzip (2.3.2)
+    sass (3.7.4)
+      sass-listen (~> 4.0.0)
+    sass-listen (4.0.0)
+      rb-fsevent (~> 0.9, >= 0.9.4)
+      rb-inotify (~> 0.9, >= 0.9.7)
     sass-rails (6.0.0)
       sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
@@ -236,11 +265,20 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    scss_lint (0.59.0)
+      sass (~> 3.5, >= 3.5.5)
     selenium-webdriver (4.4.0)
       childprocess (>= 0.5, < 5.0)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    slim (4.1.0)
+      temple (>= 0.7.6, < 0.9)
+      tilt (>= 2.0.6, < 2.1)
+    slim_lint (0.22.1)
+      rubocop (>= 0.78.0)
+      slim (>= 3.0, < 5.0)
+    smart_properties (1.17.0)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -252,6 +290,7 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
+    temple (0.8.2)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.11)
@@ -289,11 +328,13 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.4.2)
+  brakeman
   bundle-audit
   byebug
   capybara (>= 2.15)
   capybara-screenshot
   devise
+  erb_lint
   factory_bot_rails
   faker
   importmap-rails (~> 1.1)
@@ -306,8 +347,13 @@ DEPENDENCIES
   rspec-rails (~> 5.0.0)
   rspec-support (~> 3.11.0)
   rubocop
+  rubocop-discourse
+  rubocop-rails
+  rubocop-rspec
   sass-rails (>= 6)
+  scss_lint
   selenium-webdriver
+  slim_lint
   spring
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
