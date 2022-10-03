@@ -1,14 +1,14 @@
 <h1>My articles</h1>
 <ul>
   <% @articles.each do |article| %>
-   <% if current_user.id == article.user_id %>
-  <% unless article.draft? %>
-    <li>
-      <a href="<%= article_path(article) %>/edit">
-      <%= article.title %>
-    </li>
-  <% end %>
-  <% end %>
+    <% if current_user.id == article.user_id %>
+      <% unless article.draft? %>
+        <li>
+        <a href="<%= article_path(article) %>/edit">
+        <%= article.title %>
+        </li>
+      <% end %>
+    <% end %>
   <% end %>
 </ul>
 
