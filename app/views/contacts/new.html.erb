@@ -3,12 +3,12 @@
 
 <div>
   <%= form.label :email %><br>
-  <%= form.text_field :email, value: (current_user.email if user_signed_in?), required:true %><br>
+  <%= form.text_field :email, value: (current_user.email if user_signed_in?), required: true %><br>
 </div>
 
 <div>
   <%= form.label :message %><br>
-  <%= form.text_area :message, required:true %><br>
+  <%= form.text_area :message, required: true %><br>
 </div>
 
 <%= form.submit 'Send' %>

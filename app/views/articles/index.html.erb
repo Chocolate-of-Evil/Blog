@@ -4,13 +4,13 @@
    <% if current_user.id == article.user_id %>
   <% unless article.draft? %>
     <li>
-      <%= link_to article.title, article %>
-      </a>
+      <a href="<%= article_path(article) %>/edit">
+      <%= article.title %>
     </li>
   <% end %>
   <% end %>
   <% end %>
 </ul>
-<%= paginate @articles, window: 2 %>
-<li> <%= link_to "New Article", new_article_path %></li>
+
+<li> <%= link_to 'New Article', new_article_path %></li>
 <li><a href="/">Home page</a></li>

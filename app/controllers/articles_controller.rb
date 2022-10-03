@@ -3,7 +3,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @articles = Article.where(status: :public).order(:created_at).page(params[:page]).per(5)
+    @articles = Article.where(status: :public).order(:created_at)
   end
 
   def show
@@ -36,10 +36,6 @@ class ArticlesController < ApplicationController
     else
       render :edit, status: :unprocessable_entity
     end
-  end
-
-  def all
-    @articles = Article.where(status: :public).order(:created_at).page(params[:page]).per(5)
   end
 
   private
