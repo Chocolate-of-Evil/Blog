@@ -1,6 +1,6 @@
 <h1>Edit Article</h1>
 <% if current_user.id == @article.user_id %>
-<%= render "form", article: @article %>
+<%= render 'form', article: @article %>
 
 <% else %>
 Извините, вы не можете редактировать данный контент!

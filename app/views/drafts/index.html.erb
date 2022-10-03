@@ -5,12 +5,11 @@
     <% unless !article.draft? %>
 
       <li>
-      	<a href="<%= article_path(article) %>/edit">
+        <a href="<%= article_path(article) %>/edit">
         <%= article.title %>
       </li>
     <% end %>
     <% end %>
     <% end %>
 </ul>
-<li><a href="/articles/">To articles</a></li> 
-
+<li><a href="/articles/">To articles</a></li>
