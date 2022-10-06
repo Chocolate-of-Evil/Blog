@@ -1,3 +1,5 @@
+@import "bootstrap";
+
 :root {
   --black: #000;
   --blue-steel: #4682b4;
@@ -25,13 +27,18 @@
 
 .main {
   font-family: Bradley Hand;
-  margin-left: 180px;
+  margin-left: 190px;
+}
+
+.navbar {
+  font-family: Bradley Hand;
+  margin-left: 190px;
 }
 
 .container {
   margin: auto;
   margin-top: 0;
-  width: 1000px;
+  width: 1500px;
 }
 
 .form-container {
@@ -41,6 +48,12 @@
 .logo {
   float: left;
   padding-top: 6px;
+}
+
+.page_current {
+  color: var(--midnight-black);
+  font-family: Marker Felt, fantasy;
+  font-size: 20px;
 }
 
 header {

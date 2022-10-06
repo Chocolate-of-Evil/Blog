@@ -11,6 +11,9 @@ gem 'kaminari'
 gem 'pg', '~> 1.1'
 gem 'rails', '~> 6.0.5'
 gem 'rubocop', require: false
+gem 'bootstrap', '~> 5.2.0'
+gem 'execjs'
+gem 'mini_racer'
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
 # Use SCSS for stylesheets

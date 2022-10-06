@@ -32,4 +32,6 @@
   <% end %>
   <% end %>
 </ul>
-<%= paginate @articles, window: 2 %>
+<div class='page_current'>
+  <%= paginate @articles, window: 2 %>
+</div>
