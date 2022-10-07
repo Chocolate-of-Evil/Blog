@@ -1,37 +1,35 @@
 <h1>Домашняя страница</h1>
-   <% if user_signed_in? %>
-   <% if current_user.first_name.blank? %>
-
+  <% if user_signed_in? %>
+    <% if current_user.first_name.blank? %>
       <span>Добро пожаловать!<br> Вы можете добавить персональные данные, перейдя по ссылке "Редактировать профиль"
-   <% else %>
-   <span>Здравствуйте,
-    <%= current_user.first_name %> <%= current_user.last_name %></span><br>
-
-   <% end %>
-    <br>
-     <span>Ваша почта:
-    <%= current_user.email %></span>
- <br>
- <li> <%= link_to 'Перейти к вашим статьям', articles_path %></li>
- <li> <%= link_to 'Перейти к вашим черновикам', drafts_path %></li>
- <li> <%= link_to 'Создать новую статью', new_article_path %></li>
+    <% else %>
+      <span>Здравствуйте,
+      <%= current_user.first_name %> <%= current_user.last_name %></span><br>
+  <% end %>
   <br>
-    <%= link_to 'Редактировать профиль', edit_user_registration_path, class: 'navbar-link' %><br>
-    <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
-<% else %>
+  <span>Ваша почта:
+  <%= current_user.email %></span>
+  <br>
+  <li> <%= link_to 'Перейти к вашим статьям', articles_path %></li>
+  <li> <%= link_to 'Перейти к вашим черновикам', drafts_path %></li>
+  <li> <%= link_to 'Создать новую статью', new_article_path %></li>
+  <br>
+  <%= link_to 'Редактировать профиль', edit_user_registration_path, class: 'navbar-link' %><br>
+  <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
+  <% else %>
     <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
-<% end %><br>
-<span>Статьи:<br>
-<ul>
+  <% end %><br>
+  <span>Статьи:<br>
+  <ul>
   <% @articles.each do |article| %>
-  <% unless article.draft? %>
+    <% unless article.draft? %>
     <li>
-      <%= link_to article.title, article %>
-      </a>
+    <%= link_to article.title, article %>
+    </a>
     </li>
   <% end %>
-  <% end %>
+<% end %>
 </ul>
-<div class='page_current'>
-  <%= paginate @articles, window: 2 %>
+<div class='page-current'>
+<%= paginate @articles, window: 2 %>
 </div>

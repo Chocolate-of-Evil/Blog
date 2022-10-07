@@ -1,4 +1,4 @@
-@import "bootstrap";
+@import 'bootstrap';
 
 :root {
   --black: #000;
@@ -38,7 +38,6 @@
 .container {
   margin: auto;
   margin-top: 0;
-  width: 1500px;
 }
 
 .form-container {
@@ -50,15 +49,21 @@
   padding-top: 6px;
 }
 
-.page_current {
+.page-current {
   color: var(--midnight-black);
   font-family: Marker Felt, fantasy;
   font-size: 20px;
 }
 
+.actions button {
+  background: var(--sky-blue);
+  color: var(--midnight-black);
+}
+
 header {
   background: var(--sky-blue);
   background-image: url('cosmos2.jpeg');
+  min-width: 100%;
 }
 
 header::after {
@@ -114,4 +119,8 @@ side {
 
 body {
   background-image: url('white_blue.jpeg');
+}
+
+.margin-sessions-form {
+  margin-left: 30%;
 }
