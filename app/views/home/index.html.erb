@@ -21,15 +21,22 @@
   <% end %><br>
   <span>Статьи:<br>
   <ul>
+  <div class="blog-posts-list">
   <% @articles.each do |article| %>
     <% unless article.draft? %>
-    <li>
-    <%= link_to article.title, article %>
-    </a>
-    </li>
+    <div class="blog-post-item">
+      <li>
+      <%= link_to article.title, article %>
+      <div class="blog-post-meta "><%= article.user.first_name %> <%= article.user.last_name %> <br> <%= article.user.email %></div>
+            <hr style="z-index: 0;">
+            <div class="article-body"><%= truncate(simple_format(article.body), escape: false, length: 80) %></div>
+      </a>
+      </li>
+    </div>
   <% end %>
 <% end %>
 </ul>
 <div class='page-current'>
 <%= paginate @articles, window: 2 %>
+</div>
 </div>

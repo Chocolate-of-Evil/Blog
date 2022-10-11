@@ -10,7 +10,7 @@ gem 'bootstrap', '~> 5.2.0'
 gem 'execjs'
 gem 'faker'
 gem 'kaminari'
-gem 'mini_racer', '~>0.6.3'
+gem 'mini_racer', '~>0.4.0'
 gem 'pg', '~> 1.1'
 gem 'rails', '~> 6.0.5'
 gem 'rubocop', require: false

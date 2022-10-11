@@ -1,7 +1,7 @@
 <%= form_with model: article do |form| %>
-<div>
+  <div>
     <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: 'w-50 form-control form-control-lg', placeholder: 'Title' %>
     <%= form.hidden_field :user_id, value: current_user.id %>
     <% article.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
@@ -10,18 +10,19 @@
 
   <div>
     <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
+    <%= form.text_area :body, class: 'w-50 form-control form-control-lg', placeholder: 'Text' %><br>
     <% article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
-  <%= form.label :status %><br>
-  <%= form.select :status, %w[public draft] %>
-</div>
-<br>
-  <div>
-    <%= form.submit %>
+    <%= form.label :status %>
+    <%= form.select :status, %w[public draft] %>
   </div>
+  <br>
+
+  <p class="article-submit-button">
+      <%= form.submit class: "w-50 btn btn-lg btn-primary" %>
+  </p>
 <% end %>

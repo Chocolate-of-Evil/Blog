@@ -1,16 +1,19 @@
-<h1>My articles</h1>
-<ul>
-  <% @articles.each do |article| %>
-    <% if current_user.id == article.user_id %>
-      <% unless article.draft? %>
-        <li>
-        <a href="<%= article_path(article) %>/edit">
-        <%= article.title %>
-        </li>
+<div class="margin-form">
+  <h1>My articles</h1>
+  <ul>
+    <% @articles.each do |article| %>
+      <% if current_user.id == article.user_id %>
+        <% unless article.draft? %>
+          <li>
+            <a href="<%= article_path(article) %>/edit">
+            <%= article.title %>
+          </li>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
-</ul>
+  </ul>
 
-<li> <%= link_to 'New Article', new_article_path %></li>
-<li><a href="/">Home page</a></li>
+  <li> <%= link_to 'New Article', new_article_path %></li>
+  <li><a href="/">Home page</a></li>
+  <p class="mt-5 mb-3 text-muted">&copy; Severyanova 2022</p>
+</div>
