@@ -11,6 +11,7 @@ gem 'execjs'
 gem 'faker'
 gem 'kaminari'
 gem 'mini_racer', '~>0.4.0'
+gem 'nokogiri', '~> 1.13.9'
 gem 'pg', '~> 1.1'
 gem 'rails', '~> 6.0.5'
 gem 'rubocop', require: false

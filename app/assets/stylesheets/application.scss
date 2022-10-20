@@ -124,3 +124,32 @@ body {
 .margin-form {
   margin-left: 30%;
 }
+
+.blog-posts {
+  background: linear-gradient(80deg, var(--sky-blue) 15%, var(--white-blue));
+  border-radius: 35px;
+  margin: auto;
+  min-width: 100px;
+  padding: 30px;
+  width: 80%;
+
+  a {
+    color: var(--midnight-black);
+    font-size: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+}
+
+.blog-post {
+  background: linear-gradient(10deg, var(--sky-blue) 5%, var(--white-blue));
+  border-radius: 35px;
+  color: var(--midnight-black);
+  font-size: calc(.25em + 1vh);
+  line-height: 2em;
+  margin: auto;
+  min-width: 300px;
+  padding: 30px;
+  width: 60%;
+  word-wrap: break-word;
+}

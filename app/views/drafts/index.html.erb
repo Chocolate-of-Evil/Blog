@@ -1,17 +1,16 @@
-<div class="margin-form">
-  <h1>Drafts</h1>
-  <ul>
-    <% @articles.each do |article| %>
-      <% if current_user.id == article.user_id %>
-        <% unless !article.draft? %>
-          <li>
+<h1>Drafts</h1>
+<ul>
+  <% @articles.each do |article| %>
+    <% if current_user.id == article.user_id %>
+      <% unless !article.draft? %>
+        <div class="blog-posts">
             <a href="<%= article_path(article) %>/edit">
             <%= article.title %>
-          </li>
-        <% end %>
+        </div>
+        <br>
       <% end %>
     <% end %>
-  </ul>
-  <li><a href="/articles/">To articles</a></li>
-  <p class="mt-5 mb-3 text-muted">&copy; Severyanova 2022</p>
-</div>
+  <% end %>
+</ul>
+<li><a href="/articles/">To articles</a></li>
+<p class="mt-5 mb-3 text-muted">&copy; Severyanova 2022</p>

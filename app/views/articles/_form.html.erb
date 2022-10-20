@@ -21,8 +21,7 @@
     <%= form.select :status, %w[public draft] %>
   </div>
   <br>
-
-  <p class="article-submit-button">
-      <%= form.submit class: "w-50 btn btn-lg btn-primary" %>
-  </p>
+  <div class='actions'>
+    <%= form.submit class: 'w-50 btn btn-lg btn-primary' %>
+  </div>
 <% end %>
