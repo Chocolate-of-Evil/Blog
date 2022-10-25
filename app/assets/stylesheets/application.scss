@@ -5,6 +5,7 @@
   --blue-steel: #4682b4;
   --midnight-black: #191970;
   --sky-blue: #9cf;
+  --sky-blue2: #b8dbff;
   --violet: #6a5acd;
   --white-blue: #f0f8ff;
 }
@@ -126,7 +127,7 @@ body {
 }
 
 .blog-posts {
-  background: linear-gradient(80deg, var(--sky-blue) 15%, var(--white-blue));
+  background: var(--sky-blue2);
   border-radius: 35px;
   margin: auto;
   min-width: 100px;
@@ -151,4 +152,9 @@ body {
   padding: 30px;
   width: 60%;
   word-wrap: break-word;
+}
+
+.article-form-style {
+  padding-left: 2%;
+  padding-right: 2%;
 }
