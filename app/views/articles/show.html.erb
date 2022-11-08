@@ -16,3 +16,9 @@
 <% end %>
 <% end %>
 <a href="/articles/">To your articles</a>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
