@@ -1,6 +1,6 @@
 <% if @comments.count > 0 %>
       <%= comment.commenter %>
-      <% if comment.commenter == @article.user_id %>
+      <% if comment.user_id == @article.user_id %>
         <span>(author)</span>
       <% end %>
       :
@@ -9,9 +9,6 @@
 <% else %>
   <p>There is no any comment</p>
 <% end %>
-<p>
-  <%= link_to "Destroy Comment", [comment.article, comment], data: {
-    turbo_method: :delete,
-    turbo_confirm: "Are you sure?"
-  } %>
-</p>
+<% if user_signed_in? && current_user.id == comment.user_id %>
+  <%= link_to 'Delete comment', [comment.article, comment], class: 'delete-link', title: 'Удалить комментарий', data: { turbo_method: :delete } %>
+<% end %>

@@ -1,7 +1,7 @@
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+<%= form_with model: [@article, @article.comments.build] do |form| %>
   <p>
     <%= form.label :commenter %><br>
-    <%= form.text_field :email, value: (current_user.email if user_signed_in?), required: true %><br>
+    <%= form.text_field :commenter, value: (current_user.email if user_signed_in?), required: true %><br>
   </p>
   <p>
     <%= form.label :body %><br>
