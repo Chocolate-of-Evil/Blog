@@ -1,13 +1,14 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
-
-<p>
-  <strong>Comment:</strong>
-  <%= comment.body %>
-</p>
-
+<% if @comments.count > 0 %>
+      <%= comment.commenter %>
+      <% if comment.commenter == @article.user_id %>
+        <span>(author)</span>
+      <% end %>
+      :
+      <span><%= comment.body %></span>
+      </p>
+<% else %>
+  <p>There is no any comment</p>
+<% end %>
 <p>
   <%= link_to "Destroy Comment", [comment.article, comment], data: {
     turbo_method: :delete,
