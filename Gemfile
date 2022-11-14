@@ -8,6 +8,7 @@ ruby '2.7.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'faker'
 gem 'kaminari'
+gem 'nokogiri', '~> 1.13.9'
 gem 'pg', '~> 1.1'
 gem 'rails', '~> 6.0.5'
 gem 'rubocop', require: false
