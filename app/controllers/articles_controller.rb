@@ -3,7 +3,7 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!
   def index
-    @articles = Article.where(status: :public).order(:created_at)
+    @articles = Article.where(status: :public).order(created_at: :desc)
   end
 
   def show

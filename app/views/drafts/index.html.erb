@@ -1,6 +1,6 @@
 <h1>Drafts</h1>
 <ul>
-  <% @articles.reverse_each do |article| %>
+  <% @articles.each do |article| %>
     <% if current_user.id == article.user_id %>
       <% unless !article.draft? %>
         <div class="blog-posts">

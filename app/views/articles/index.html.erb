@@ -1,10 +1,10 @@
 <h1>My articles</h1>
 <ul>
-  <% @articles.reverse_each do |article| %>
+  <% @articles.each do |article| %>
     <% if current_user.id == article.user_id %>
       <% unless article.draft? %>
         <div class="blog-posts">
-            <a href="<%= article_path(article) %>/edit">
+            <a href="<%= edith_article_path(article) %>">
             <%= article.title %>
         </div>
         <br>
