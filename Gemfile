@@ -6,8 +6,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby '2.7.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
+gem 'bootstrap', '~> 5.2.0'
+gem 'execjs'
 gem 'faker'
 gem 'kaminari'
+gem 'mini_racer', '~>0.4.0'
 gem 'nokogiri', '~> 1.13.9'
 gem 'pg', '~> 1.1'
 gem 'rails', '~> 6.0.5'
