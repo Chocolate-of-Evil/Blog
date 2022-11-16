@@ -23,7 +23,9 @@
 
 <h2>Comments</h2>
 <%= render @article.comments %>
-
+<% if @article.comments.count == 0 %>
+  <p>There is no any comment</p>
+<% end %>
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
 <p class="mt-5 mb-3 text-muted">&copy; Severyanova 2022</p>

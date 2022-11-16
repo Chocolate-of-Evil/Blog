@@ -4,7 +4,7 @@
     <% if current_user.id == article.user_id %>
       <% unless article.draft? %>
         <div class="blog-posts">
-            <a href="<%= edith_article_path(article) %>">
+            <a href="<%= edit_article_path(article) %>">
             <%= article.title %>
         </div>
         <br>
