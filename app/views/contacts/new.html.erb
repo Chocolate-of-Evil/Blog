@@ -1,15 +1,18 @@
+<div class="margin-form">
 <h1>Contact Form</h1>
 <%= form_with url: contacts_path do |form| %>
 
 <div>
   <%= form.label :email %><br>
-  <%= form.text_field :email, value: (current_user.email if user_signed_in?), required: true %><br>
+  <%= form.text_field :email, value: (current_user.email if user_signed_in?), required: true, class: 'w-50 form-control form-control-lg', placeholder: 'Email' %>
 </div>
 
 <div>
   <%= form.label :message %><br>
-  <%= form.text_area :message, required: true %><br>
+  <%= form.text_area :message, required: true, class: 'w-50 form-control form-control-lg', placeholder: 'Message' %><br>
 </div>
 
-<%= form.submit 'Send' %>
+<button class="w-50 btn btn-lg btn-primary" type="submit">Send</button>
 <% end %>
+<p class="mt-5 mb-3 text-muted">&copy; Severyanova 2022</p>
+</div>

@@ -1,3 +1,4 @@
+<div class="margin-form">
 <h1>Edit Article</h1>
 <% if current_user.id == @article.user_id %>
 <%= render 'form', article: @article %>
@@ -5,3 +6,5 @@
 <% else %>
 Извините, вы не можете редактировать данный контент!
 <% end %>
+<p class="mt-5 mb-3 text-muted">&copy; Severyanova 2022</p>
+</div>
