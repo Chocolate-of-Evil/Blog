@@ -7,7 +7,7 @@
     <span>(author)</span>
   <% end %>
     :
-  <span><%= simple_format(comment.body) %></span> 
+  <span><%= simple_format(comment.body) %></span>
 <% if user_signed_in? && current_user.id == comment.user_id %>
   <%= link_to 'Delete comment', [comment.article, comment], class: 'delete-link', title: 'Удалить комментарий', data: { turbo_method: :delete } %>
 <% end %>
