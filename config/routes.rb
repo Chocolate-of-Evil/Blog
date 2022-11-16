@@ -10,6 +10,9 @@ Rails.application.routes.draw do
   root to: 'home#index'
   resources :articles
   resources :drafts
+  resources :articles do
+    resources :comments
+  end
   devise_scope :user do
     get '/users/sign_out' => 'devise/sessions#destroy'
   end

@@ -1,0 +1,7 @@
+<%= form_with model: [@article, @article.comments.build] do |form| %>
+
+  <p><%= form.text_area :body, class: 'w-50 form-control form-control-lg', placeholder: 'New comment' %></p>
+  <div class='actions'>
+    <p><%= form.submit class: 'w-50 btn btn-lg btn-primary' %></p>
+  </div>
+<% end %>
